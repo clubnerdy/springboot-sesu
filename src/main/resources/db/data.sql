@@ -1,9 +1,9 @@
 insert into user_tb(username, password, email, created_at)
-values ('ssar', '1234', 'ssar@nate.com', now());
+values ('ssar', '$2a$10$hH6nsFenNxeGR9AiSxYZ7ebrYtDpq/QgbrdhS7hoanLG8vrPrAfFK', 'ssar@nate.com', now());
 insert into user_tb(username, password, email, created_at)
-values ('cos', '1234', 'cos@nate.com', now());
+values ('cos', '$2a$10$hH6nsFenNxeGR9AiSxYZ7ebrYtDpq/QgbrdhS7hoanLG8vrPrAfFK', 'cos@nate.com', now());
 insert into user_tb(username, password, email, created_at)
-values ('love', '1234', 'love@nate.com', now());
+values ('love', '$2a$10$hH6nsFenNxeGR9AiSxYZ7ebrYtDpq/QgbrdhS7hoanLG8vrPrAfFK', 'love@nate.com', now());
 
 insert into board_tb(title, content, user_id, created_at)
 values ('제목1', '내용1', 1, now());
