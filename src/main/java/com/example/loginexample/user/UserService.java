@@ -1,6 +1,7 @@
 package com.example.loginexample.user;
 
 
+import com.example.loginexample._core.error.ex.Exception401;
 import lombok.RequiredArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,9 @@ public class UserService {
 
     public User 로그인(UserRequest.LoginDTO loginDTO) {
         User user = userRepository.findByUsername(loginDTO.getUsername());
+        if (user == null) throw new Exception401("아이디 혹은 비밀번호가 일치하지 않습니다.");
         boolean isSame = BCrypt.checkpw(loginDTO.getPassword(), user.getPassword());
-        if (!isSame) throw new RuntimeException("아이디 혹은 비밀번호가 일치하지 않습니다.");
+        if (!isSame) throw new Exception401("아이디 혹은 비밀번호가 일치하지 않습니다.");
         return user;
     }
 
